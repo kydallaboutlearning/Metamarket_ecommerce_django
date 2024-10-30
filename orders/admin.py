@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+
+#importing models
+from .models import *
+
+
+#creating a modelinline admin
+
+class order(admin.TabularInline):
+    model = OrderItems
+    raw_id_fields = ['price','product','quantity']
