@@ -22,6 +22,7 @@ class OrderItemInline(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
     """Creating a list display to show fields that would display in the admin panel"""
     list_display = [
+        'id',
         'first_name',
         'last_name',
         'email',
