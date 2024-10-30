@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}
  {{ product.name }}
-{% endblock %}
+{% endblock title %}
 {% block content %}
  <div class="product-detail">
  <img src="{% if product.image %}{{ product.image.url }}{% else %}
@@ -14,11 +14,11 @@
  </a>
  </h2>
  <p class="price">${{ product.price }}</p>
- <form action="{% url "cart:cart_add" product.id %}" method="post">
+ <form action="{% url "cart:add_to_cart" product.id %}" method="post">
     {{ cart_product_form }}
     {% csrf_token %}
     <input type="submit" value="Add to cart">
    </form>
  {{ product.description|linebreaks }}
  </div>
-{% endblock %}
+{% endblock content %}

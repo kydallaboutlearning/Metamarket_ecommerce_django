@@ -21,7 +21,6 @@ class ProductAdmin(admin.ModelAdmin):
                      )
     list_editable = (
         'price',
-        'description',
         'available',
     )
     list_filter = (
