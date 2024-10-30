@@ -8,8 +8,11 @@ from .models import *
 #creating a modelinline admin
 
 class OrderItemInline(admin.TabularInline):
-    model = OrderItems
-    raw_id_fields = ['price','product','quantity']
+    model = OrderItem
+    raw_id_fields = ['order',
+                     'product',
+                     ]
+    
 
 
 #creating a decorator to register the models
