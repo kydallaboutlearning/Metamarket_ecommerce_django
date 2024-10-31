@@ -29,7 +29,7 @@ def CreateOrderView(request):
             #deleting the cart
             cart.clear()
             return render(request, 
-                          'order/success.html',
+                          'orders/success.html',
                           {'order':order}
                           )
         else:
