@@ -16,6 +16,7 @@
  </ul>
  <p>Total: ${{ cart.get_total_price }}</p>
  </div>
+ {% if order_info %}
  <form method="post" class="order-form">
  {{ form.as_p }}
  <p><input type="submit" value="Place order"></p>
