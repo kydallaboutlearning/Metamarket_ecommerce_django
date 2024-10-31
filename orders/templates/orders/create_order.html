@@ -5,6 +5,9 @@
 {% block content %}
 <h1> Thank you, Your Order is completed </h1>
 
-<P><strong> Your order number is {{order.id}}</strong></P>
+<p><strong> Your order number is {{order.id}}
+
+<a href ="{% url 'shop:product_list' %}" class ="button">Get back to shopping</a>
+</strong></p>
 
 {% endblock content %}

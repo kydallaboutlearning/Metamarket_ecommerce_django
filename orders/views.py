@@ -11,7 +11,7 @@ def CreateOrderView(request):
     cart = Cart(request)
 
     #creating a method to handle post request
-    if request.Method == 'POST':
+    if request.method == 'POST':
         create_order_form = OrderCreateform(request.POST)
 
         if create_order_form.is_valid():
@@ -39,7 +39,7 @@ def CreateOrderView(request):
 
     return render(
         request,
-        '.html', 
+        'orders/create_order.html', 
         {'form':form,'cart':cart},
     )
 
