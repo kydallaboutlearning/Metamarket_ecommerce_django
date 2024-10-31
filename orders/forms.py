@@ -9,11 +9,10 @@ class OrderCreateform(forms.ModelForm):
         model = Order
         fields = [
             'first_name',
-            'last-name',
+            'last_name',
             'email',
             'postal_code',
             'address',
-            'created',
             'city'
             ]
         
