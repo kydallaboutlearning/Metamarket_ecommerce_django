@@ -1,6 +1,6 @@
 #importing required modules
 from decimal import Decimal
-from django.conf import Settings
+from django.conf import settings
 from shop.models import Product
 
 #creating a cart class
@@ -10,10 +10,10 @@ class Cart:
         initializing cart session
         """
         self.session = request.session
-        cart = self.session.get[Settings.CART_SESSION_ID]
+        cart = self.session.get(settings.CART_SESSION_ID)
 
         if not cart:
-            cart = self.session.get[Settings.CART_SESSION_ID] = {}
+            cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
     def add(self,product,quantity = 1,override_quantity = False):
@@ -78,7 +78,8 @@ class Cart:
         """
         method for deleting session 
         """
-        del self.session.get[Settings.CART_SESSION_ID]
+        del self.session[settings.CART_SESSION_ID]
+        self.save()
 
  
 
