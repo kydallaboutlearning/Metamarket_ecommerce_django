@@ -16,10 +16,25 @@
  </ul>
  <p>Total: ${{ cart.get_total_price }}</p>
  </div>
- {% if order_info %}
+ 
+
+
+    <!-- Add more fields as needed -->
+    
+    <button onclick="showEditForm()">Edit</button>
+    <form id="edit-form" style="display:none;" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+<br> This is your order info , if you want to change it .
+<a href ="{% url 'orders:create_order' %}" class ="button"> Change The Order Info</a>
+{%else%}
  <form method="post" class="order-form">
  {{ form.as_p }}
  <p><input type="submit" value="Place order"></p>
  {% csrf_token %}
  </form>
+ {%  endif %}
+
 {% endblock %}
